@@ -1,0 +1,24 @@
+<h1>Liste des abonnés</h1>
+<% @users = @users.select {|user| user.role != "admin"} %>
+<% if @users.size > 0 %>
+  <table>
+    <thead>
+      <th>Id</th>
+      <th>Email</th>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.email %></td>
+            <% if user_signed_in? && current_user.role == "admin" %>
+            <td><%= link_to 'Supprimer', "users/#{user.id}", :confirm => 'Etes-vous sûr ?', :method => :delete %></td>
+            <% end %>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Il n'y a pas d'abonné.</p>
+<% end %>
+<p><%= link_to "Revenir à l'accueil", root_path %></p>
