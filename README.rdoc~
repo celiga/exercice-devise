@@ -1,7 +1,7 @@
 == Authentification sur Ruby on Rails avec la gem devise
 
-* Système d'inscription/connexion
+* Système d'inscription/connexion avec la gem devise
 
-* Affichage de la liste des utilisateurs (libre accès)
+* Affichage de liste des utilisateurs (libre accès)
 
 * Seuls les administrateurs peuvent supprimer les utilisateurs.
